@@ -1,29 +1,27 @@
 !!! 5
-html
+html(data-ng-app="crossfitApp")
 	head
 		title Wodstorm
 		link(href='assets/styles/main.css', rel='stylesheet', type='text/css')
 		meta(charset='utf-8')
-	body
-		#wrapper
-			#login-container
-				#logo
-					a
-						img(src="images/", alt="Wodstorm")
-				#login
-					h3 Bem vindo ao BoxAdm
+		meta(name="description", content="Wodstorm - Sistema de gerencia de box de crossfit")
+		meta(name="author", content="Wodstorm")
+	body(data-ng-switch, on="$root.logged")
+		#wrapper(data-ng-switch-when="true")
+			header#header(data-ng-show="headerIsVisible")
+				h1#site-logo
+					a(href="#/dashboard")
+						img(src="assets/images/logo.png", alt="WodStorm")
+			nav#top-bar(ws-nav-usuario)
+			#sidebar-wrapper(ws-sidebar-menu)
 
-					form#login-form.form(name="form", novalidate)
-						.form-group
-							label(for="login-usuario") Usuário
-							input#login-usuario.form-control(type="text", placeholder="Usuário", data-ng-model="loginDataset.usuario",autofocus required)
-						.form-group
-							label(for="login-senha") Senha
-							input#login-senha.form-control(type="password", placeholder="Senha", data-ng-model="loginDataset.senha", required)
-						.form-group
-							label(for="login-organizacao") Organização
-							input#login-organizacao.form-control(type="text", placeholder="Organização", data-ng-model="loginDataset.organizacao", required)
-						.form-group
-							button#login-btn.btn.primary.btn-block(data-ng-click="login();", data-nd-disable="form.$invalid") Login
+			div(data-ng-view)
 
-						a.btn.btn-default Esqueceu a senha?
+			.modal(data-ng-show="carregando")
+				.loading
+
+			footer#footer
+				p Copyright &copy; 2013, WodStorm.
+
+		#wrapper(data-ng-switch-default)
+			div(data-ng-view)
