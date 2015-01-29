@@ -1,0 +1,76 @@
+#content
+	#content-header
+		h1 Metrica de Contratos
+	#content-container
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-tasks Pesquisa
+					.portlet-content
+						.col-sm-5
+							.form-group
+								label(for="datainicial") Data Inicial
+								input#datainicial.form-control(ws-data, type="text",  data-ng-model="relMetricaContratoDataset.data_ini")
+						.col-sm-5
+							.form-group
+								label(for="datafinal") Data Final
+								input#datafinal.form-control(ws-data, type="text", data-ng-model="relMetricaContratoDataset.data_fim")
+						.col-sm-2
+							span &nbsp
+							.form-group
+								button.btn.btn-success(type="button", data-ng-click="pesquisaRelMetricaContrato();") Pesquisar
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-tasks
+							| Resultado
+					.portlet-content
+						.table-responsive
+							table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+								thead
+									tr
+										th Ativos Periodo
+										th Finalizados
+										th Renovados
+										th Novos
+										th Total Ativos
+								tbody
+									tr(data-ng-repeat="item in relMetricaContratoResponseDataset")
+										td
+											{{item.ativoPeriodo.length}}
+											a.info-modal(data-ng-click='buscaAlunosPorStatus("P")')
+												i.fa.fa-info-circle
+										td
+											{{item.finalizado.length}}
+											a.info-modal(data-ng-click='buscaAlunosPorStatus("F")')
+												i.fa.fa-info-circle
+										td
+											{{item.renovado.length}}
+											a.info-modal(data-ng-click='buscaAlunosPorStatus("R")')
+												i.fa.fa-info-circle
+										td
+											{{item.novos.length}}
+											a.info-modal(data-ng-click='buscaAlunosPorStatus("N")')
+												i.fa.fa-info-circle
+										td
+											{{item.ativos.length}}
+											a.info-modal(data-ng-click='buscaAlunosPorStatus("A")')
+												i.fa.fa-info-circle
+						.table-responsive
+							table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+								thead
+									tr
+										th Nome
+										th Ação
+								tbody
+									tr(ng-repeat="item in alunosMetricaSelecionada | orderBy:'nome'| startFrom: (currentPage - 1) * itemsPerPage | limitTo: itemsPerPage")
+										td {{item.nome}}
+										td
+											a.btn.btn-sm.btn-success(href="#/cad_aluno/{{item.id_aluno}}")
+												i.fa.fa-edit
+							pagination.pagination-sm(total-items="alunosMetricaSelecionada.length", page="currentPage", items-per-page="itemsPerPage", boundary-links="true", rotate="false", previous-text="&lsaquo;", next-text="&rsaquo;", first-text="&laquo;", last-text="&raquo;", max-size="maxSize")
+<!-- <script src="public/assets/js/demos/charts/morris/bar.js"></script> -->

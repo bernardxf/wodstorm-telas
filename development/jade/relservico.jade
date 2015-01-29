@@ -1,0 +1,38 @@
+#content
+	#content-header
+		h1 Relatório de Serviço
+	#content-container
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-tasks
+							| Pesquisa
+					.portlet-content
+						.col-sm-3
+							.form-group
+								label(for="datainicial") Data Inicial
+								input#datainicial.form-control(ws-data, type="text", data-ng-model="relservicoDataset.data_ini")
+						.col-sm-3
+							.form-group
+								label(for="datafinal") Data Final
+								input#datafinal.form-control(ws-data, type="text", data-ng-model="relservicoDataset.data_fim")
+						.col-sm-3
+							.form-group
+								label(for="tipo") Tipo
+								input#tipo.form-control(type="text", data-ng-model="relservicoDataset.tipo")
+						.col-sm-2
+							span &nbsp
+							.form-group
+								button.btn.btn-success(type="button", data-ng-click="pesquisaRelServico();") Pesquisar
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-bar-chart-o
+							| Gráfico
+					.portlet-content
+						#bar-chart.chart-holder
+<!-- <script src="public/assets/js/demos/charts/morris/bar.js"></script> -->

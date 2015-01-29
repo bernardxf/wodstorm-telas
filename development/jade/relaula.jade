@@ -1,0 +1,38 @@
+#content
+	#content-header
+		h1 Relatório de Aula
+	#content-container
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-tasks
+							| Pesquisa
+					.portlet-content
+						.col-sm-3
+							.form-group
+								label(for="datainicial") Data Inicial
+								input#datainicial.form-control(ws-data, type="text", data-ng-model="relaulaDataset.data_ini")
+						.col-sm-3
+							.form-group
+								label(for="datafinal") Data Final
+								input#datafinal.form-control(ws-data, type="text", data-ng-model="relaulaDataset.data_fim")
+						.col-sm-4
+							.form-group
+								label(for="horario") Horário
+								input#horario.form-control(ws-hora, data-ng-model="relaulaDataset.horario")
+						.col-sm-2
+							span &nbsp
+							.form-group
+								button.btn.btn-success(type="button", data-ng-click="pesquisaRelAula();") Pesquisar
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-bar-chart-o
+							| Gráfico
+					.portlet-content
+						#bar-chart.chart-holder
+<!-- <script src="public/assets/js/demos/charts/morris/bar.js"></script> -->
