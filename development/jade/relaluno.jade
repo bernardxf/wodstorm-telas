@@ -1,0 +1,64 @@
+#content(data-ng-init="carregaRelAluno();")
+	#content-header
+		h1 Relatório de Aluno
+	#content-container
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-tasks
+							| Pesquisa
+					.portlet-content
+						.col-sm-3
+							.form-group
+								label(for="datainicial") Data Inicial
+								input#datainicial.form-control(ws-data, type="text", data-ng-model="relalunoDataset.data_ini")
+						.col-sm-3
+							.form-group
+								label(for="datafinal") Data Final
+								input#datafinal.form-control(ws-data, type="text", data-ng-model="relalunoDataset.data_fim")
+						.col-sm-4
+							.form-group
+								label(for="aluno") Aluno
+								select#aluno.form-control(data-ng-model="relalunoDataset.id_aluno", ui-select2 data-placeholder="Selecione um aluno")
+									option
+									option(ng-repeat="aluno in selectAluno", value="{{aluno.id_aluno}}") {{aluno.nome}}
+						.col-sm-2
+							span &nbsp
+							.form-group
+								button.btn.btn-success(type="button", data-ng-click="pesquisaRelAluno();") Pesquisar
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-tasks
+							| Resultado
+					.portlet-content
+						.table-responsive
+							table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+								thead
+									tr
+										th Aluno
+										th Plano
+										th Início Contrato
+										th Fim Contrato
+										th Num. Presenças
+								tbody
+									tr(data-ng-repeat="item in relAlunoResponseDataset.aluno")
+										td {{item.aluno}}
+										td {{item.plano}}
+										td {{item.data_inicio | date:'dd/MM/yyyy'}}
+										td {{item.data_fim | date:'dd/MM/yyyy'}}
+										td {{item.num_presencas}}
+						.table-responsive
+							table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+								thead
+									tr
+										th Data
+										th Horario
+								tbody
+									tr(data-ng-repeat="item in relAlunoResponseDataset.aulas")
+										td {{item.data | date:'dd/MM/yyyy'}}
+										td {{item.horario}}

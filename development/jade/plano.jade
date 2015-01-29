@@ -1,0 +1,36 @@
+#content(data-ng-init="carregaPlano();")
+	#content-header
+		h1 Planos
+	#content-container
+		.col-md-12
+			.portlet
+				.portlet-header
+					h3
+						i.fa.fa-table
+						| Planos
+					ul.portlet-tools.pull-right
+						li
+							a.btn.btn-sm.btn-success(href="#/cad_plano") Novo
+				.portlet-content
+					.table-responsive
+						table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+							thead
+								tr
+									th Nome
+									th Valor
+									th Ação
+								tr
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Nome", data-ng-model="planoFilter.nome")
+									th
+										input.form-control.input-sm.show(type="text", placeholder="valor", data-ng-model="planoFilter.valor")
+									th
+							tbody
+								tr(data-ng-repeat="item in planoDataset | filter:planoFilter")
+									td {{item.nome}}
+									td {{item.valor | currency:'R$'}}
+									td
+										a.btn.btn-sm.btn-success(href="#/cad_plano/{{item.id_plano}}")
+											i.fa.fa-edit
+										a.btn.btn-sm.btn-danger(data-ng-click="deletaPlano(item);")
+											i.fa.fa-eraser

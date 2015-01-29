@@ -1,0 +1,36 @@
+#content(data-ng-init="carregaFormaPagamento();")
+	#content-header
+		h1 Formas de Pagamento
+	#content-container
+		.col-md-12
+			.portlet
+				.portlet-header
+					h3
+						i.fa.fa-table
+						| Formas de Pagamento
+					ul.portlet-tools.pull-right
+						li
+							a.btn.btn-sm.btn-success(href="#/cad_formapagamento") Novo
+				.portlet-content
+					.table-responsive
+						table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+							thead
+								tr
+									th Cód
+									th Nome
+									th Ação
+								tr
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Cód", data-ng-model="formapagamentoFilter.id_forma_pagamento")
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Nome", data-ng-model="formapagamentoFilter.nome")
+									th
+							tbody
+								tr(ng-repeat="item in formapagamentoDataset | filter:formapagamentoFilter")
+									td {{item.id_forma_pagamento}}
+									td {{item.nome}}
+									td
+										a.brn.btn-sm.btn-success(href="#/cad_formapagamento/{{item.id_forma_pagamento}}")
+											i.fa.fa-edit
+										a.btn.btn-sm.btn-danger(data-ng-click="deletaFormaPagamento(item);"
+										i.fa.fa-eraser">

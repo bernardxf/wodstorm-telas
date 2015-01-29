@@ -1,0 +1,50 @@
+#content(data-ng-init="pesquisaAulas();")
+	#content-header
+		h1 Aulas
+	#content-container
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-tasks
+							| Pesquisa
+					.portlet-content
+						.col-sm-3
+							.form-group
+								label(for="dataAula") Data
+								input#dataAula.form-control(ws-data, type="text", data-ng-model="pesquisaAulaDataset.data")
+								//- <input class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="pesquisaAulaDataset.data" show-weeks="false" ng-required="true" id="dataAula" close-text="Fechar" readonly />
+						.col-sm-4
+							span &nbsp
+							.form-group
+								button.btn.btn-success(data-ng-click="pesquisaAulas();") Pesquisar
+		.row
+			.col-sm-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-tasks
+							| Resultado
+						ul.portlet-tools.pull-right
+							li
+								a.btn.btn-sm.btn-success(href="#/cad_presenca") Novo
+					.portlet-content
+						.table-responsive
+							table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+								thead
+									tr
+										th Horario
+										th Num. Presentes
+										th Num. Excedentes
+										th Ação
+								tbody
+									tr(data-ng-repeat="item in aulaDataset")
+										td {{item.horario}}
+										td {{item.num_presentes}}
+										td {{item.num_excedentes}}
+										td
+											a.btn.btn-sm.btn-success(href="#/cad_presenca/{{item.id_aula}}")
+												i.fa.fa-edit
+											a.btn.btn-sm.btn-danger(data-ng-click="deletaPresenca(item);")
+												i.fa.fa-eraser
