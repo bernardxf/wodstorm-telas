@@ -1,0 +1,69 @@
+#content(data-ng-init="loadDashboard();")
+	#content-header
+		h1 Dashboard
+	#content-container
+		.row
+			.col-md-12
+				.portlet
+					.portlet-header
+						h3
+							i.fa.fa-table
+							| {{titulo}}
+						ul.portlet-tools.pull-right(data-ng-show="buttons.length > 0")
+							li(data-ng-repeat="button in buttons")
+								a.btn.btn-sm.btn-imprimir(data-ng-href="{{button.route}}", target="_blank", title="Imprimir")
+									i.fa.fa-print
+					.portlet-content
+						.row
+							.col-md-3
+								a.dashboard-stat.default(href="javascript:;", data-ng-click="buscarAlunosDashboard('A');")
+									.visual
+										i.fa.fa-star
+									.details
+										span.content Alunos Ativos
+										span.value {{dashboardDataset.dashboard.ativo}}
+							.col-md-3
+								a.dashboard-stat.tertiary(href="javascript:;", data-ng-click="buscarAlunosDashboard('I');")
+									.visual
+										i.fa.fa-star
+									.details
+										span.content Alunos Inativos
+										span.value {{dashboardDataset.dashboard.inativo}}
+							.col-md-3
+								a.dashboard-stat.secondary(href="javascript:;", data-ng-click="buscarAlunosDashboard('T');")
+									.visual
+										i.fa.fa-star
+									.details
+										span.content Alunos Trancados
+										span.value {{dashboardDataset.dashboard.trancado}}
+							.col-md-3
+								a.dashboard-stat.primary(href="javascript:;", data-ng-click="buscarAlunosDashboard('F');")
+									.visual
+										i.fa.fa-star
+									.details
+										span.content Alunos Finalizados
+										span.value {{dashboardDataset.dashboard.finalizado}}
+						.row
+							.col-md-12
+								.table-responsive(data-ng-if="alunosDashboardDataset")
+									table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+										thead
+											tr
+												th Aluno
+												th
+													| Ação
+													a.btn.btn-sm.btn-danger.pull-right(data-ng-click="fecharAlunosDashboard();")
+														i.fa.fa-times
+										tbody
+											tr(data-ng-repeat="item in alunosDashboardDataset | startFrom: (currentPage - 1) * itemsPerPage | limitTo: itemsPerPage")
+												td {{item.nome}}
+												td
+													a.btn.btn-sm.btn-success(href="#/cad_aluno/{{item.id_aluno}}")
+														i.fa.fa-edit
+									pagination.pagination-sm(total-items="alunosDashboardDataset.length", page="currentPage", items-per-page="itemsPerPage", boundary-links="true", rotate="false", previous-text="&lsaquo;", next-text="&rsaquo;", first-text="&laquo;", last-text="&raquo;", max-size="maxSize")
+		.row
+			ws-grid(grid-data="dashboardDataset.aniversarios", show-input-items-per-page="true", titulo="tituloAniversariantes", columns="columnsAniversariantes", buttons="botoesAniversariantes")
+			ws-grid(grid-data="dashboardDataset.plano", show-input-items-per-page="true", titulo="tituloPlanosVencendo", columns="columnsPlanosVencendo")
+		.row
+			ws-grid(grid-data="dashboardDataset.estacionamentoVencido", show-input-items-per-page="true", titulo="tituloEstacionamentoVencido", columns="columnsEstacionamentoVencido")
+			ws-grid(grid-data="dashboardDataset.estacionamentoTrancado", show-input-items-per-page="true", titulo="tituloEstacionamentoTrancado", columns="columnsEstacionamentoTrancado")

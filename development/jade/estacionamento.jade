@@ -1,0 +1,44 @@
+#content(data-ng-init="carregaEstacionamento();")
+	#content-header
+		h1 Estacionamento
+	#content-container
+		.col-md-12
+			.portlet
+				.portlet-header
+					h3
+						i.fa.fa-table
+						| Estacionamento
+					ul.portlet-tools.pull-right
+						li
+							a.btn.btn-sm.btn-success(href="#/cad_estacionamento") Novo
+				.portlet-content		
+					.table-responsive
+						table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+							thead
+								tr
+									th Aluno
+									th Placa
+									th Plano Fim
+									th Valor
+									th Ação
+								tr
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Aluno", data-ng-model="estacionamentoFilter.aluno")
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Placa", data-ng-model="estacionamentoFilter.placa")
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Plano Fim", ws-data ng-model="estacionamentoFilter.plano_fim")
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Valor", data-ng-model="estacionamentoFilter.valor")
+									th
+							tbody
+								tr(data-ng-repeat="item in estacionamentoDataset | filter:estacionamentoFilter")
+									td {{item.aluno}}
+									td {{item.placa}}
+									td {{item.plano_fim | date:'dd/MM/yyyy'}}
+									td {{item.valor}}
+									td
+										a.btn.btn-sm.btn-success(href="#/cad_estacionamento/{{item.id_estacionamento}}")
+											i.fa.fa-edit
+										a.btn.btn-sm.btn-danger(data-ng-click="deletaEstacionamento(item);")
+											i.fa.fa-eraser

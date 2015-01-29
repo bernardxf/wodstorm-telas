@@ -1,0 +1,45 @@
+#content(data-ng-init="carregaContrato();")
+	#content-header
+		h1 Contrato
+	#content-container
+		.col-md-12
+			.portlet
+				.portlet-header
+					h3
+						i.fa.fa-table
+						| Contrato
+					ul.portlet-tools.pull-right
+						li
+							a.btn.btn-sm.btn-tertiary(href="#/cad_aluno/{{aluno}}") Voltar
+							a.btn.btn-sm.btn-success(href="#/cad_contrato/{{aluno}}") Novo
+				.portlet-content
+					.table-responsive
+						table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+							thead
+								tr
+									th Inicio
+									th Fim
+									th Economico
+									th Status
+									th Ações
+								tr
+									th
+										input.form-control.input-sm.show(type="text", ws-data, placeholder="Data Inicio", data-ng-model="contratoFilter.data_inicio")
+									th
+										input.form-control.input-sm.show(type="text", ws-data, placeholder="Data Fim", data-ng-model="contratoFilter.data_fim")
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Horario Economico", data-ng-model="contratoFilter.horario_economico")
+									th
+										input.form-control.input-sm.show(type="text", placeholder="Status", data-ng-model="contratoFilter.status")
+									th 
+							tbody
+								tr(data-ng-repeat="item in contratoDataset | filter:contratoFilter")
+									td {{item.data_inicio | date:'dd/MM/yyyy'}}
+									td {{item.data_fim | date:'dd/MM/yyyy'}}
+									td {{item.horario_economico | SimNaoTranslate}}
+									td {{item.status | StatusTranslate}}
+									td
+										a.btn.btn-sm.btn-success(href="#/cad_contrato/{{aluno}}/{{item.id_contrato}}")
+											i.fa.fa-edit
+										a.btn.btn-sm.btn-danger(data-ng-click="deletaContrato(item);")
+											i.fa.fa-eraser

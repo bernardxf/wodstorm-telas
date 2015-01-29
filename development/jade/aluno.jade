@@ -2,8 +2,6 @@
 	#content-header
 		h1 Alunos
 	#content-container		
-
-		<!--  Inicio grid alunos  -->
 		.col-md-12
 			.portlet
 				.portlet-header
@@ -26,17 +24,17 @@
 									th Status
 									th Ação
 								tr
-									th 
+									th
 										input.form-control.input-sm.show(type="text", placeholder="Nome", data-ng-model="alunoFilter.nome")
-									th 
+									th
 										input.form-control.input-sm.show(type="text", placeholder="E-mail", data-ng-model="alunoFilter.email")
-									th 
+									th
 										input.form-control.input-sm.show(type="text", placeholder="Celular", data-ng-model="alunoFilter.celular")
-									th 
+									th
 										input.form-control.input-sm.show(type="text", ws-data, placeholder="Fim Contrato", data-ng-model="alunoFilter.data_fim")
-									th 
+									th
 										input.form-control.input-sm.show(type="text", placeholder="Status", data-ng-model="alunoFilter.status")
-									th 
+									th
 							tbody
 								tr(data-ng-repeat="item in alunoDataset | filter:alunoFilter | startFrom: (currentPage - 1) * itemsPerPage | limitTo: itemsPerPage")
 									td {{item.nome}}
@@ -50,8 +48,3 @@
 										a.btn.btn-sm.btn-danger(data-ng-click="deletaAluno(item);")
 											i.fa.fa-eraser
 						pagination.pagination-sm(total-items="alunoDataset.length", page="currentPage", items-per-page="itemsPerPage", boundary-links="true", rotate="false", previous-text="&lsaquo;", next-text="&rsaquo;", first-text="&laquo;", last-text="&raquo;", max-size="maxSize")
-
-
-
-
-
