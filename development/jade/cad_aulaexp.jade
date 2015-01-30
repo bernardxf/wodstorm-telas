@@ -1,7 +1,6 @@
-#content(data-ng-init="carregaCadAulaExp();")			
+#content(data-ng-init="carregaCadAulaExp();")
 	#content-header
-		 h1 Aula Experimental
-	
+		h1 Aula Experimental
 	#content-container"
 		.row
 			form.form-horizontal
@@ -10,73 +9,61 @@
 						li.active(ws-stacked-nav, stackedid="cadastro-tab")
 							a(data-toggle="tab")
 								i.fa.fa-user 
-								&nbsp;&nbsp; Cadastro  <!-- DUVIDA -->
-							
+								| Cadastro
 						li(ws-stacked-nav, stackedid="presenca-tab")
 							a(data-toggle="tab")
 								i.fa.fa-check 
-								&nbsp;&nbsp; Presença   <!-- DUVIDA -->
-							
+								| Presença
 						li(ws-stacked-nav, stackedid="pos-tab")
 							a(data-toggle="tab")
 								i.fa.fa-comment 
-								&nbsp;&nbsp; Pós-aula   <!-- DUVIDA -->
-							
+								| Pós-aula
 					button.btn.btn-success(type="button", data-ng-click="salvaAulaExp();", data-ng-disabled="form.$invalid") Salvar
 					button.btn.btn-danger(type="button", data-ng-click="cancelaEdicaoAulaExp();") Cancelar
 				
 				.col-md-9.col-sm-8
 					.tab-content.stacked-content
-						#cadastro-tab.tab-pane.fade.in.active#cadastro-tab <!-- DUVIDA -->
+						#cadastro-tab.tab-pane.fade.in.active
 							.form-group
 								label.col-md-3 Nome *
 								.col-md-7
 									input#text-input.form-control(type="text", data-ng-model="aulaexpDataset.nome", required)
-							
 							.form-group
 								label.col-md-3 Data Aula *
 								.col-md-7
 									input#data_aula.form-control(ws-data, type="text", data-ng-model="aulaexpDataset.data_aula")
-
 							.form-group
 								label.col-md-3 E-mail *
 								.col-md-7
 									input#email.form-control(type="email", data-ng-model="aulaexpDataset.email", required)
-								
 							.form-group
 								label.col-md-3 Telefone *
 								.col-md-7
 									input#telefone.form-control(type="text", data-ng-model="aulaexpDataset.telefone", required)
-					      	
 							.form-group
 								label.col-md-3 CPF
 								.col-md-7
-					      			input#cpf.form-control(type="text", data-ng-model="aulaexpDataset.cpf", required)
-								
+									input#cpf.form-control(type="text", data-ng-model="aulaexpDataset.cpf", required)
 							.form-group
 								label.col-md-3 Como ficou conhecendo a academia?
 								.col-md-7
 									input#conhecendo.form-control(type="text", data-ng-model="aulaexpDataset.conhecendo", required)
-
 							.form-group
-					      		label.col-md-3 Já tem alguma experiência com o crossfit?
+								label.col-md-3 Já tem alguma experiência com o crossfit?
 								.col-md-7
 									select#exp_crossfit.form-control(data-ng-model="aulaexpDataset.exp_crossfit", required)
 										option(value="S") Sim
 										option(value="N") Não
-
 							.form-group
 								label.col-md-3 Observação
 								.col-md-7
 									textarea#observacao.form-control(cols="10", rows="9", data-ng-model="aulaexpDataset.observacao")
-
 							.form-group
 								label.col-md-3 Confirmado
 								.col-md-7
 									select#confirmado.form-control(data-ng-model="aulaexpDataset.confirmado")
 										option(value="Não") Não 
 										option(value="Sim") Sim
-
 						#presenca-tab.tab-pane.fade
 							.form-group
 								label.col-md-3 Presente
@@ -84,26 +71,20 @@
 									select#presente.form-control(data-ng-model="aulaexpDataset.presente")
 										option(value="Não") Não
 										option(value="Sim") Sim
-
 						#pos-tab.tab-pane.fade
 							.form-group
 								label.col-md-3 O que achou da aula experimental?
 								.col-md-7
 									label.radio-inline
 										input#nota_aula(type="radio", data-ng-model="aulaexpDataset.nota_aula", value="pessimo") Péssimo
-
 									label.radio-inline
 										input#nota_aula(type="radio", data-ng-model="aulaexpDataset.nota_aula", value="ruim") Ruim
-
 									label.radio-inline
 										input#nota_aula(type="radio", data-ng-model="aulaexpDataset.nota_aula", value="regular") Regular
-
 									label.radio-inline
 										input#nota_aula(type="radio", data-ng-model="aulaexpDataset.nota_aula", value="bom") Bom
-
 									label.radio-inline
 										input#nota_aula(type="radio", data-ng-model="aulaexpDataset.nota_aula", value="otimo") Ótimo
-	
 							.form-group
 								label.col-md-3 Pretende começar a praticar Crossfit?
 								.col-md-7
@@ -111,6 +92,3 @@
 										option(value="I") Indeciso
 										option(value="N") Não
 										option(value="S") Sim
-
-
-	

@@ -1,7 +1,6 @@
 #content(data-ng-init="carregaAulaExp();")			
 	#content-header
 		h1 Aula Experimental
-
 	#content-container
 		.row
 			.col-sm-12
@@ -13,7 +12,6 @@
 						ul.portlet-tools.pull-right
 							li
 								a.btn.btn-sm.btn-success(href="#/cad_aulaexp") Novo
-
 					.portlet-content
 						.table-responsive
 							table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
@@ -26,11 +24,10 @@
 										th Confirmado
 										th Presente
 										th Ação
-
 									th 
 										input.form-control.input-sm.show(type="text", placeholder="Nome", ng-model="aulaexpFilter.nome")
 									th
-										input.form-control.input-sm.show(ws-data placeholder="Data", type="text", ng-model="aulaexpFilter.data_aula")
+										input.form-control.input-sm.show(ws-data, placeholder="Data", type="text", ng-model="aulaexpFilter.data_aula")
 									th
 										input.form-control.input-sm.show(type="text", placeholder="Telefone", ng-model="aulaexpFilter.telefone")
 									th
@@ -40,7 +37,6 @@
 									th
 										input.form-control.input-sm.show(type="text", placeholder="Presente", ng-model="aulaexpFilter.presente")
 									th
-
 								tbody
 									tr(data-ng-repeat="item in aulaexpDataset | filter:aulaexpFilter")
 										td {{item.nome}}

@@ -5,7 +5,7 @@
 	#content-container
 		.portlet
 			.portlet-header
-				<h3>
+				h3
 					i.fa.fa-tasks
 					| Estacionamento
 
@@ -15,7 +15,7 @@
 						.col-sm-12
 							.form-group
 								label(for="estacionamentoAluno") Aluno *
-								select#estacionamentoAluno.form-control(data-ng-model="cadEstacionamentoDataset.id_aluno", ui-select2 data-placeholder="Selecione um aluno", required)
+								select#estacionamentoAluno.form-control(data-ng-model="cadEstacionamentoDataset.id_aluno", ui-select2, data-placeholder="Selecione um aluno", required)
 									option
 									option(data-ng-repeat="aluno in selectAluno", value="{{aluno.id_aluno}}") {{aluno.nome}}
 
