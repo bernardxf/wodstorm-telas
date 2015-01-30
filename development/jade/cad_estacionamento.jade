@@ -1,0 +1,62 @@
+#content(data-ng-init="carregaCadEstacionamento();")
+	#content-header
+		h1 Estacionamento
+
+	#content-container
+		.portlet
+			.portlet-header
+				<h3>
+					i.fa.fa-tasks
+					| Estacionamento
+
+			.portlet-content
+				form.form(name="form", novalidate)
+					.row
+						.col-sm-12
+							.form-group
+								label(for="estacionamentoAluno") Aluno *
+								select#estacionamentoAluno.form-control(data-ng-model="cadEstacionamentoDataset.id_aluno", ui-select2 data-placeholder="Selecione um aluno", required)
+									option
+									option(data-ng-repeat="aluno in selectAluno", value="{{aluno.id_aluno}}") {{aluno.nome}}
+
+						.col-sm-6
+							.form-group
+								label(for="estacionamentoModelo") Modelo
+								input#estacionamentoModelo.form-control(type="text", data-ng-model="cadEstacionamentoDataset.modelo")
+
+							.form-group
+								label(for="estacionamentoCor") Cor
+								input#estacionamentoCor.form-control(type="text", data-ng-model="cadEstacionamentoDataset.cor")
+
+							.form-group
+								label(for="estacionamentoPlaca") Placa *
+								input#estacionamentoPlaca.form-control(type="text", data-ng-model="cadEstacionamentoDataset.placa", required)
+
+							.form-group
+								label(for="estacionamentoValorTotal") Valor Total *
+								input#estacionamentoValorTotal.form-control(type="text", data-ng-model="cadEstacionamentoDataset.valor", required)
+
+							.form-group
+								label(for="estacionamentoStatus") Status *
+								select#estacionamentoStatus.form-control(data-ng-model="cadEstacionamentoDataset.estacionamento_status", required)
+									option(value="A") Ativo
+									option(value="I") Inativo
+									option(value="T") Trancado
+
+						.col-sm-6
+							.form-group
+								label(for="estacionamentoPlanoIni") Plano Inicio *
+								input#plano_ini.form-control(type="text", ws-data, data-ng-model="cadEstacionamentoDataset.plano_ini", required)
+
+							.form-group
+								label(for="estacionamentoPlanoFim") Plano Fim *
+								input#plano_fim.form-control(type="text", ws-data, data-ng-model="cadEstacionamentoDataset.plano_fim", required)
+
+							.form-group
+								label(for="estacionamentoObservacao") Observação
+								textarea#estacionamentoObservacao.form-control(cols="10", rows="9", data-ng-model="cadEstacionamentoDataset.observacao")
+
+					.row
+						.col-sm-12
+							button.btn.btn-success(type="button", data-ng-click="salvaEstacionamento();", data-ng-disabled="form.$invalid") Salvar
+							button.btn.btn-danger(type="button", data-ng-click="cancelaEdicaoEstacionamento();") Cancelar

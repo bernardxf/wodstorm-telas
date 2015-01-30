@@ -1,0 +1,66 @@
+#content(data-ng-init="carregaCadContrato();")			
+	#content-header
+		h1 Contrato
+
+	#content-container
+		.portlet
+			.portlet-header
+				h3
+					i.fa.fa-tasks
+					| Contrato
+
+			.portlet-content
+				form.form(name="form", novalidate)
+					.row
+						.col-sm-6
+							.form-group
+								label(for="contratoDataIni") Data Inicial *
+								input#data_inicio(type="text", ws-data class="form-control", data-ng-model="cadContratoDataset.data_inicio", data-ng-required="true")
+
+							.form-group
+								label(for="contratoPlano") Plano *
+								select#contratoPlano(type="text", class="form-control", data-ng-model="cadContratoDataset.id_plano", required)
+									option(data-ng-repeat="item in selectPlano", value="{{item.id_plano}}") {{item.nome}}
+
+							.form-group
+								label(for="contratoFormaPagamento") Forma de Pagamento *
+								select#contratoFormaPagamento.form-control(type="text", data-ng-model="cadContratoDataset.id_forma_pagamento", required)
+									option(data-ng-repeat="item in selectFormaPagamento", value="{{item.id_forma_pagamento}}") {{item.nome}}
+
+							.form-group
+								label(for="contratoDesconto") Desconto
+								select#contratoDesconto.form-control(data-ng-model="cadContratoDataset.id_desconto")
+									option(data-ng-repeat="item in selectDesconto", value="{{item.id_desconto}}") {{item.nome}}
+
+						.col-sm-6
+							.form-group
+								label(for="contratoDataFim") Data Final *
+								input#data_fim.form-control(type="text", ws-data, data-ng-model="cadContratoDataset.data_fim", data-ng-required="true")
+
+							.form-group
+								label(for="contratoHorarioEconomico") Horario Economico *
+								select#contratoHorarioEconomico.form-control(data-ng-model="cadContratoDataset.horario_economico", required)
+									option(value="S") Sim
+									option(value="N") Não
+
+							.form-group
+								label(for="contratoStatus") Status *
+								select#contratoStatus.form-control(data-ng-model="cadContratoDataset.status", required)
+									option(value="A") Ativo
+									option(value="I") Inativo
+									option(value="F") Finalizado
+									option(value="T") Trancado
+
+							.form-group
+								label(for="contratoDiasTrancados") Dias Trancados
+								input#contratoDiasTrancados.form-control(type="text", data-ng-model="cadContratoDataset.dias_trancado", data-ng-change="atualizaVencimentoContrato();")
+
+					.row
+						.col-sm-12
+							.form-group
+								label(for="contratoObservacao") Observação
+								textarea#contratoObservacao.form-control(cols="10", rows="9", data-ng-model="cadContratoDataset.observacao")
+
+						.col-sm-12
+							button.btn.btn-success(type="button", data-ng-click="salvaContrato();", data-ng-disabled="form.$invalid") Salvar
+							button.btn.btn-danger(type="button", data-ng-click="cancelaEdicaoContrato();") Cancelar
