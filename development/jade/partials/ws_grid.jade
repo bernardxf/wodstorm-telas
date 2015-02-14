@@ -1,0 +1,25 @@
+.col-md-{{gridSize}}
+    .portlet
+        .portlet-header
+            h3
+                .fa.fa-table
+                {{titulo}}
+            ul.portlet-tools.pull-right(data-ng-show="buttons.length > 0")
+                li(data-ng-repeat="button in buttons")
+                    a.btn.btn-sm.btn-imprimir(data-ng-href="{{button.route}}", target="_blank", title="Imprimir")
+                        .fa.fa-print
+        .portlet-content           
+            .table-responsive
+                table.table.table-striped.table-bordered.table-hover.table-highlight.table-checkable
+                    thead
+                        tr
+                            th(data-ng-repeat="column in columns | orderBy: column.order")
+                                {{column.label}}
+                    tbody
+                        tr(data-ng-repeat="row in gridData | startFrom: (currentPage - 1) * itemsPerPage | limitTo: itemsPerPage")
+                            td(data-ng-repeat="column in columns | orderBy: column.order", ng-switch on="column.tipo")
+                                div(data-ng-switch-when="text")
+                                    {{row[column.name]}}
+                                div(data-ng-switch-when="date")
+                                    {{row[column.name] | date:'dd/MM/yyyy'}}
+                pagination.pagination-sm(total-items="gridData.length", page="currentPage", items-per-page="itemsPerPage", boundary-links="true", rotate="false", previous-text="&lsaquo;", next-text="&rsaquo;", first-text="&laquo;", last-text="&raquo;", max-size="maxSize")

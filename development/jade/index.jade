@@ -12,10 +12,15 @@ html(data-ng-app="crossfitApp")
 				h1#site-logo
 					a(href="#/dashboard")
 						img(src="assets/images/logo.png", alt="WodStorm")
-			nav#top-bar(ws-nav-usuario)
-			#sidebar-wrapper(ws-sidebar-menu)
+			//- nav#top-bar(ws-nav-usuario)
+			nav#top-bar
+				include partials/ws_nav_usuario
+			//- #sidebar-wrapper(ws-sidebar-menu)
+			#sidebar-wrapper
+				include partials/ws_sidebar_menu
 
 			div(data-ng-view)
+				include dashboard
 
 			.modal(data-ng-show="carregando")
 				.loading

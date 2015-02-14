@@ -1,0 +1,16 @@
+ul(data-ng-controlle="MenuCtrl")
+	li
+		a
+			i.fa.fa-user
+			| {{$root.loggedUserData.nome}}
+			span.caret
+		ul(role="menu")
+			li
+				a(href="#/perfil")
+					i.fa.fa-cogs
+					| Configuração de Usuário
+			li.divider
+			li
+				a(href="#/logout")
+					i.fa.fa-sign-out
+					| Logout

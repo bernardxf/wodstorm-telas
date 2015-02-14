@@ -1,0 +1,8 @@
+.modal-header
+	| Novo agrupador financeiro
+.modal-body
+	label(for="agrupador") Agrupador *
+	input#agrupador.form-control(type="text", data-ng-model="agrupadorDataset.nome", required)
+.modal-footer
+    button.btn.btn-success(data-ng-click="salvaAgrupador()") Salvar
+    button.btn.btn-danger(data-ng-click="ok()") Fechar
