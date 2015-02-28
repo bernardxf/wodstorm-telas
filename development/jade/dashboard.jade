@@ -50,16 +50,15 @@
 										thead
 											tr
 												th Aluno
-												th
-													| Ação
-													a.btn.btn-sm.btn-danger.pull-right(data-ng-click="fecharAlunosDashboard();")
-														i.fa.fa-times
+												th Ação
 										tbody
 											tr(data-ng-repeat="item in alunosDashboardDataset | startFrom: (currentPage - 1) * itemsPerPage | limitTo: itemsPerPage")
 												td {{item.nome}}
 												td
 													a.btn.btn-sm.btn-success(href="#/cad_aluno/{{item.id_aluno}}")
 														i.fa.fa-edit
+													a.btn.btn-sm.btn-danger.pull-right(data-ng-click="fecharAlunosDashboard();")
+														i.fa.fa-times
 									pagination.pagination-sm(total-items="alunosDashboardDataset.length", page="currentPage", items-per-page="itemsPerPage", boundary-links="true", rotate="false", previous-text="&lsaquo;", next-text="&rsaquo;", first-text="&laquo;", last-text="&raquo;", max-size="maxSize")
 		.row
 			ws-grid(grid-data="dashboardDataset.aniversarios", show-input-items-per-page="true", titulo="tituloAniversariantes", columns="columnsAniversariantes", buttons="botoesAniversariantes")

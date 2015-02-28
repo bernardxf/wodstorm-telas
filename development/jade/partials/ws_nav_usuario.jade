@@ -1,16 +1,16 @@
-ul(data-ng-controlle="MenuCtrl")
+ul.nav.navbar-nav.pull-right(data-ng-controlle="MenuCtrl")
 	li
-		a
+		a.dropdown.dropdown-toggle
 			i.fa.fa-user
-			| {{$root.loggedUserData.nome}}
+			{{$root.loggedUserData.nome}}
 			span.caret
-		ul(role="menu")
-			li
+		ul.dropdown-menu(role="menu")
+			li.dropdown-menu-item
 				a(href="#/perfil")
 					i.fa.fa-cogs
-					| Configuração de Usuário
+					&nbsp;&nbsp;Configuração de Usuário
 			li.divider
-			li
+			li.dropdown-menu-item
 				a(href="#/logout")
 					i.fa.fa-sign-out
-					| Logout
+					&nbsp;&nbsp;Logout

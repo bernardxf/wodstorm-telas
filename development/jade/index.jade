@@ -2,7 +2,11 @@
 html(data-ng-app="crossfitApp")
 	head
 		title Wodstorm
-		link(href='assets/styles/main.css', rel='stylesheet', type='text/css')
+		link(rel="stylesheet", href="../../css/font-awesome.min.css", type="text/css")
+		link(rel="stylesheet", href="../../css/bootstrap.min.css", type="text/css")
+		link(rel="stylesheet", href="../../css/select2.css", type="text/css")
+		link(rel="stylesheet", href="../../css/App.css", type="text/css")
+		link(rel="stylesheet", href="../../css/custom.css", type="text/css")
 		meta(charset='utf-8')
 		meta(name="description", content="Wodstorm - Sistema de gerencia de box de crossfit")
 		meta(name="author", content="Wodstorm")
@@ -20,7 +24,7 @@ html(data-ng-app="crossfitApp")
 				include partials/ws_sidebar_menu
 
 			div(data-ng-view)
-				include dashboard
+				include usuario
 
 			.modal(data-ng-show="carregando")
 				.loading
