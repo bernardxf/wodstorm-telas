@@ -1,31 +1,27 @@
 !!! 5
 html
 	head
-		title Wodstorm
+		title Wodstorm - Box Admin
 		link(href='assets/styles/main.css', rel='stylesheet', type='text/css')
 		meta(charset='utf-8')
-	body
-		#wrapper
-			#login-container
-				#logo
-					a
-						img(src="assets/images/logo-login.png", alt="Wodstorm")
-				#login
-					h3 Bem vindo ao BoxAdm
-
-					form#login-form.form(name="form", novalidate)
-						.form-group
-							label(for="login-usuario") Usuário
-							input#login-usuario.form-control(type="text", placeholder="Usuário", data-ng-model="loginDataset.usuario",autofocus required)
-						.form-group
-							label(for="login-senha") Senha
-							input#login-senha.form-control(type="password", placeholder="Senha", data-ng-model="loginDataset.senha", required)
-						.form-group
-							label(for="login-organizacao") Organização
-							input#login-organizacao.form-control(type="text", placeholder="Organização", data-ng-model="loginDataset.organizacao", required)
-						.form-group
-							button#login-btn.btn.btn-primary.btn-block(data-ng-click="login();", data-nd-disable="form.$invalid")
-								| Login
-								i.fa.fa-play-circle
-
-						a.btn.btn-default Esqueceu a senha?
+	body.login
+		.sombra
+		.container
+			.logo
+			.box-login
+				.titulo Olá! Bem vindo(a) ao Box Admin!
+				.descricao Insira seus dadso para logar
+				form
+					p
+						label Usuário:
+						input(type="text", placeholder="Usuário")
+						//- .msg-alert Usuário não cadastrao
+					p
+						label Senha:
+						input(type="password", placeholder="Senha")
+						//- .msg-alert Senha incorreta
+					p
+						label Org:
+						input(type="text", placeholder="Organização")
+					button Confirmar
+			a(href="#") Esqueci minha senha
