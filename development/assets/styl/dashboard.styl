@@ -1,0 +1,40 @@
+.box-status
+	background-color #fff
+	border-radius 4px
+	box-shadow 0 2px #D9D9DD
+	display block
+	float left
+	height 114px
+	margin 0 0 0 27px
+	text-align center
+	width 224px
+	&:first-child
+		margin 0
+	.icone
+		border-radius 4px 0 0 4px
+		display block
+		float left
+		height 114px
+		width 65px
+	.titulo
+		color #666
+		display block
+		font-size 13px
+		margin 15px auto 0
+	span
+		color #1E1E1E
+		display block
+		font-family Lato-Hairline
+		font-size 52px
+	&.ativo
+		.icone
+			background-color #7CB22F
+	&.inativo
+		.icone
+			background-color #455B67
+	&.trancado
+		.icone
+			background-color #F1C000
+	&.finalizado
+		.icone
+			background-color #FF5922

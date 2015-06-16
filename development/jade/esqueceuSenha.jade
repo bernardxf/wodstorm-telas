@@ -1,0 +1,23 @@
+!!! 5
+html
+	head
+		title Wodstorm - Box Admin
+		link(href='assets/styles/main.css', rel='stylesheet', type='text/css')
+		meta(charset='utf-8')
+	body.login
+		.sombra
+		.container
+			.logo
+			.box-login
+				.titulo Esqueceu sua senha?
+				.descricao.esqueceu PARA RECUPERAR SUA SENHA, PREENCHA OS DADOS ABAIXO:
+				form
+					p
+						label Usuário:
+						input(type="text", placeholder="Usuário")
+						//- .msg-alert Usuário não cadastrao
+					p
+						label Email:
+						input(type="email", placeholder="Email")
+						//- .msg-alert Senha incorreta
+					button Confirmar
