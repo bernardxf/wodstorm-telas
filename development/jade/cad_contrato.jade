@@ -1,0 +1,71 @@
+#cad_contrato
+	h1 
+		| Alunos
+		.user
+		.sair
+	.content
+		.box
+			.titulo Novo contrato
+			form
+				p
+					label Data inicial
+					input(type="date")
+				p
+					label Data final
+					input(type="date")
+				p
+					label Plano
+					select
+						option 2x Mensal
+						option 3x Mensal
+						option 4x Mensal
+						option 5x Mensal
+						option 2x Trimestral
+						option 3x Trimestral
+						option 4x Trimestral
+						option 5x Trimestral
+						option 2x Semestral
+						option 3x Semestral
+						option 4x Semestral
+						option 5x Semestral
+						option 2x Anual
+						option 3x Anual
+						option 4x Anual
+						option 5x Anual
+				p
+					label Horário econômico
+					select
+						option Sim
+						option Não
+				p
+					label Forma de pagamento
+					select
+						option Dinheiro
+						option Cartão Crédito
+						option Cartão Débito
+						option Cheque
+				p
+					label Status
+					select
+						option Ativo
+						option Inativo
+						option Trancado
+						option Finalizado
+				p
+					label Descontos
+					select
+						option Bolsa 30%
+						option Bolsa 50%
+						option Bolsa 100%
+						option Família (20%)
+				p
+					label Dias trancados
+					input(type="text")
+				p.observacao
+					label Observação
+					textarea
+				hr
+				.botoes
+					button.salvar Salvar
+					button Cancelar
+				

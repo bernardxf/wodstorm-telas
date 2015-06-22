@@ -6,12 +6,15 @@
 	outline 0
 	text-transform uppercase
 body
-	background-color #EDEEF2
+	background-color #1E1E1E
 a
 	text-decoration none
 input[type="text"]
 input[type="password"]
 input[type="email"]
+input[type="date"]
+textarea
+select
 	border 2px solid #DDE1E1
 	color #666666
 	font-family TitilliumWeb-Light
@@ -21,8 +24,7 @@ input[type="email"]
 	&:focus
 		border-color #878787
 // MENU LATERAL
-.menu-lateral
-	background-color #1E1E1E
+.menu-lateral	
 	display block
 	float left
 	width 130px
@@ -30,7 +32,7 @@ input[type="email"]
 		background url(../images/logo.png) 0 0 no-repeat
 		display block
 		height 162px
-		margin 20px auto
+		margin 20px auto 60px
 		width 97px
 	ul
 		border-top 1px solid #2E2E2E
@@ -44,19 +46,49 @@ input[type="email"]
 				font-size 14px
 				height 45px
 				padding-top 49px
+				position relative
 				text-align center
 				&.active
 				&:active
 					background-color #C02C0A
 					color #fff
+				&:after
+					font-family icomoon
+					font-size 30px
+					left 50px
+					padding 0
+					position absolute
+					top 14px
+				&.m1:after
+					content '\e60a'
+				&.m2:after
+					content '\e600'
+				&.m3:after
+					content '\e602'
+				&.m4:after
+					content '\e60e'
+				&.m5:after
+					content '\e616'
+				&.m6:after
+					content '\e608'
+				&.m7:after
+					content '\e617'
+				&.m8:after
+					content '\e609'
+				&.m9:after
+					content '\e610'
+
 // CONTAINER
 .container
+	background-color #edeef2
 	display block
 	left 130px
+	min-height 1098px
 	position absolute
+	right 0
 	text-align center
 	top 0px
-	width 90%
+	width auto
 // TITULO DA PAGINA
 h1
 	background-color #fff
@@ -69,10 +101,11 @@ h1
 	left 0px
 	line-height 90px
 	position absolute
+	right 0
 	text-align left
 	top 0
 	padding-left 50px
-	width 96%
+	width auto
 
 // CONTENT
 .content
@@ -89,8 +122,187 @@ hr
 	display block
 	float left
 	height 1px
-	margin 50px 0
+	margin 40px 0
 	width 980px
+
+// BOX
+.box
+	background-color #fff
+	border-radius 4px
+	box-shadow 0 2px #D9D9DD
+	display block
+	float left
+	width 980px
+	&.dir
+		margin-left 50px
+	.titulo
+		display block
+		font-size 16px
+		height 55px
+		line-height 55px
+		padding-left 50px
+		position relative
+		&:after
+			font-family icomoon
+			font-size 30px
+			left 10px
+			position absolute
+			top 0px
+		&.aniversario:after
+			content '\e605'
+		&.planos:after
+			content '\e610'
+			top -2px
+		&.estacionamento:after
+			content '\e60e'
+		a 
+			display block
+			float right
+			height 25px
+			margin 16px 20px 0 0
+			position relative
+			width 25px
+			&:after
+				color #AEBDC8
+				font-family icomoon
+				font-size 25px
+				height 25px
+				left 0px
+				position absolute
+				top -15px
+				width 25px
+			&.adicionar:after
+				content '\e621'
+			&.pesquisar:after
+				content '\e604'
+				
+
+// TABLE
+table
+	border-collapse collapse
+	border-spacing 0
+	display table
+	margin 0 auto
+	max-width 100%
+	text-align left
+	width 100%
+	tr
+		display table-row
+		th
+		td
+			border-bottom 1px solid #eee
+			border-left 1px solid #eee
+			display table-cell
+			height 20px
+			line-height 20px
+			padding 15px
+			&:first-child
+				border-left none
+		th
+			background-color #353535
+			border none
+			color #ECEDF2
+			font-size 14px
+			text-align center
+		td
+			color #666
+			font-family TitilliumWeb-Light
+			font-size 18px
+			text-transform initial
+			div
+				display block
+				height 20px
+				margin 0 auto
+				position relative
+				width 20px
+				&:after
+					font-family icomoon
+					font-size 20px
+				&.ativo:after
+					color #7AB30E
+					content '\e607'
+				&.trancado:after
+					color #F4C100
+					content '\e61e'
+				&.finalizado:after
+					color #FF5B03
+					content '\e606'
+			a
+				display inline-block
+				height 20px
+				margin 0 2px
+				position relative
+				width 20px
+				&:after
+					color #B2C1CC
+					font-family icomoon
+					font-size 20px
+				&.editar:after
+					content '\e60c'
+				&.excluir:after
+					content '\e601'
+					
+// FORMULARIO
+form
+	display block
+	margin 0 auto 20px
+	width 770px
+	p
+		display block
+		float left
+		margin 0 0 10px
+		width 360px
+		&:nth-child(2n)
+			float right
+		label
+			color #878787
+			display block
+			font-size 14px
+	hr
+		margin 10px 0
+		width 770px
+	.botoes
+		clear both
+		display block
+		text-align center
+		width 100%
+		button
+			background-color #ccc
+			border none
+			color #fff
+			display inline-block
+			font-size 14px
+			height 42px
+			margin 0 10px
+			width 130px
+			&.salvar
+				background-color #00B885
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -157,7 +157,7 @@ module.exports = function(grunt) {
                 paths: ['stylus']
             },
             files: {
-                '<%= meta.test.raiz %>assets/styles/main.css': ['<%= meta.development.raiz %>assets/styl/**/*.styl']
+                '<%= meta.test.raiz %>assets/styles/main.css': ['<%= meta.development.raiz %>assets/styl/main.styl']
             }
           },
           build: {
@@ -165,7 +165,7 @@ module.exports = function(grunt) {
                 paths: ['stylus']
             },
             files: {
-                '<%= meta.build.raiz %>assets/styles/main.css': ['<%= meta.development.raiz %>assets/styl/**/*.styl']
+                '<%= meta.build.raiz %>assets/styles/main.css': ['<%= meta.development.raiz %>assets/styl/main.styl']
             }
           }
         },

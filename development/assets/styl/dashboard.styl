@@ -1,40 +1,65 @@
-.box-status
-	background-color #fff
-	border-radius 4px
-	box-shadow 0 2px #D9D9DD
-	display block
-	float left
-	height 114px
-	margin 0 0 0 27px
-	text-align center
-	width 224px
-	&:first-child
-		margin 0
-	.icone
-		border-radius 4px 0 0 4px
+#dashboard
+	.box-status
+		background-color #fff
+		border-radius 4px
+		box-shadow 0 2px #D9D9DD
 		display block
 		float left
 		height 114px
-		width 65px
-	.titulo
-		color #666
-		display block
-		font-size 13px
-		margin 15px auto 0
-	span
-		color #1E1E1E
-		display block
-		font-family Lato-Hairline
-		font-size 52px
-	&.ativo
+		margin 0 0 0 27px
+		text-align center
+		width 224px
+		&:first-child
+			margin 0
 		.icone
-			background-color #7CB22F
-	&.inativo
-		.icone
-			background-color #455B67
-	&.trancado
-		.icone
-			background-color #F1C000
-	&.finalizado
-		.icone
-			background-color #FF5922
+			border-radius 4px 0 0 4px
+			color #fff
+			display block
+			float left
+			height 114px
+			position relative
+			width 65px
+			&:after
+				font-family icomoon
+				font-size 30px
+				left 16px
+				position absolute
+				top 45px
+		.titulo
+			color #666
+			display block
+			font-size 13px
+			margin 15px auto 0
+		span
+			color #1E1E1E
+			display block
+			font-family Lato-Hairline
+			font-size 52px
+		&.ativo
+			.icone
+				background-color #7CB22F
+				&:after
+					content '\e607'
+		&.inativo
+			.icone
+				background-color #455B67
+				&:after
+					content '\e61d'
+		&.trancado
+			.icone
+				background-color #F1C000
+				&:after
+					content '\e61e'
+		&.finalizado
+			.icone
+				background-color #FF5922
+				&:after
+					content '\e606'
+	.box
+		height 432px
+		margin 0 0 50px
+		width 465px
+		&.dir
+			margin-left 50px
+		.titulo
+			width 415px
