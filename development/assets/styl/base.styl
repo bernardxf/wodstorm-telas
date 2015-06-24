@@ -196,6 +196,7 @@ table
 			height 20px
 			line-height 20px
 			padding 15px
+			text-align center
 			&:first-child
 				border-left none
 		th
@@ -241,6 +242,11 @@ table
 					content '\e60c'
 				&.excluir:after
 					content '\e601'
+			small
+				display block
+				font-family TitilliumWeb-Light
+				font-size 12px
+				margin -5px 0 0
 					
 // FORMULARIO
 form
@@ -277,6 +283,24 @@ form
 			width 130px
 			&.salvar
 				background-color #00B885
+#cad_aluno
+#cad_contrato
+	input[type="text"]
+	input[type="password"]
+	input[type="email"]
+	input[type="date"]
+	textarea
+		width 326px
+	select
+		width 360px
+
+// TITULOS FORMS CADASTRO
+#cad_aluno
+#cad_contrato
+#cad_aula_exp
+	.titulo
+		border-bottom 10px solid #353535
+		margin-bottom 10px
 		
 		
 

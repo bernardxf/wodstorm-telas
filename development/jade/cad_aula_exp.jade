@@ -1,0 +1,73 @@
+#cad_aula_exp
+	h1 
+		| Aula Experimental
+		.user
+		.sair
+	.content
+		.box
+			.titulo Nova marcação
+			form
+				.tab
+					ul.tabs
+						li.active
+							a(href="#") Salvar
+						li
+							a(href="#") Presença
+						li
+							a(href="#") Pós-aula
+					.tab-content
+						#salvar
+							p
+								label Nome
+								input(type="text")
+							p
+								label Data aula
+								input(type="date")
+							p
+								label E-mail
+								input(type="email")
+							p
+								label Telefone
+								input(type="text")
+							p
+								label CPF
+								input(type="text")
+							p
+								label Como conheceu a academia
+								input(type="text")
+							p
+								label Já tem alguma experiência no Crossfit?
+								select
+									option Sim
+									option Não
+							p.observacao
+								label Observacao
+								textarea
+						#presenca
+							| Presença
+						#pos-aula
+							| Pos-aula
+				hr
+				.botoes
+					button.salvar Salvar
+					button Cancelar
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
