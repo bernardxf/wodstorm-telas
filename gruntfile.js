@@ -141,11 +141,11 @@ module.exports = function(grunt) {
           },
           test: {
             src: ['<%= meta.development.raiz %>assets/scripts/*.js'],
-            dest: '<%= meta.test.raiz %>assets/scripts/script.js'
+            dest: '<%= meta.test.raiz %>assets/scripts/main.js'
           },
           build: {
               src: ['<%= meta.development.raiz %>assets/scripts/*.js'],
-              dest: '<%= meta.build.raiz %>assets/scripts/script.js'
+              dest: '<%= meta.build.raiz %>assets/scripts/main.js'
           }
         },
 

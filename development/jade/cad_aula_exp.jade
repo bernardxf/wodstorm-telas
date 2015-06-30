@@ -44,9 +44,32 @@
 								label Observacao
 								textarea
 						#presenca
-							| Presença
+							p
+								label Confirmado?
+								select
+									option Sim
+									option Não
 						#pos-aula
-							| Pos-aula
+							p
+								label O que achou da aula experimental?
+							.check
+								input(type="checkbox", id="otimo")
+								label(for="otimo") Ótimo
+							.check
+								input(type="checkbox", id="bom")
+								label(for="bom") Bom
+							.check
+								input(type="checkbox", id="regular")
+								label(for="regular") Regular
+							.check
+								input(type="checkbox", id="ruim")
+								label(for="ruim") Ruim
+							.check
+								input(type="checkbox", id="pessimo")
+								label(for="pessimo") Péssimo
+							p
+								label Observação
+								textarea
 				hr
 				.botoes
 					button.salvar Salvar

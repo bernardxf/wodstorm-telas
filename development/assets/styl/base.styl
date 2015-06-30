@@ -23,6 +23,48 @@ select
 	padding 0 15px
 	&:focus
 		border-color #878787
+.check
+	[type="checkbox"]:not(:checked)
+	[type="checkbox"]:checked
+		left -9999px
+		position absolute
+		& + label
+			cursor pointer
+			padding-left 25px
+			position relative
+			&:before
+				border 2px solid #dde1e1
+				content ''
+				height 17px
+				left 0
+				position absolute
+				top 2px
+				width 17px
+			&:after
+				color #09ad7e
+				content '✔'
+				font-size 14px
+				left 6px
+				position absolute
+				top 1px
+				transition all .2s
+	[type="checkbox"]:checked +label:before
+		border-color #878787
+	[type="checkbox"]:not(:checked) + label:after
+		opacity 0
+		transform scale(0)
+	[type="checkbox"]:checked + label:after
+		opacity 1
+		transform scale(1)
+	[type="checkbox"]:disabled:not(:checked) + label:before
+	[type="checkbox"]:disabled:checked + label:before
+		box-shadow none
+		border-color #bbb
+		background-color #ddd
+	[type="checkbox"]:disabled:checked + label:after
+		color #999
+	[type="checkbox"]:disabled + label
+		color #aaa
 // MENU LATERAL
 .menu-lateral	
 	display block
@@ -257,6 +299,7 @@ form
 		display block
 		float left
 		margin 0 0 10px
+		min-height 65px
 		width 360px
 		&:nth-child(2n)
 			float right
@@ -285,6 +328,8 @@ form
 				background-color #00B885
 #cad_aluno
 #cad_contrato
+#cad_estacionamento
+#cad_servico
 	input[type="text"]
 	input[type="password"]
 	input[type="email"]
@@ -298,6 +343,8 @@ form
 #cad_aluno
 #cad_contrato
 #cad_aula_exp
+#cad_estacionamento
+#cad_servico
 	.titulo
 		border-bottom 10px solid #353535
 		margin-bottom 10px
