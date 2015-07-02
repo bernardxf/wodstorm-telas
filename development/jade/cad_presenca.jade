@@ -1,0 +1,124 @@
+#cad_presenca
+	h1 
+		| Presença
+		.user
+		.sair
+	.content
+		.box.pesquisa
+			label Aluno
+			input(type="text")
+			button Pesquisar
+		.box.aluno
+			.titulo Aluno
+			table
+				tr
+					th Alunos
+					th Plano
+					th Plano Fim
+					th Presenças
+					th Max de aulas
+					th Presente
+				tr
+					td Bernard Faria
+					td 5x Anual
+					td 20/12/2015
+					td 8
+					td 12
+					td
+						a(href='#', title='presente').presente
+				tr.presente
+					td Bernard Faria
+					td 5x Anual
+					td 20/12/2015
+					td 8
+					td 12
+					td
+						a(href='#', title='presente').presente
+				tr
+					td Bernard Faria
+					td 5x Anual
+					td 20/12/2015
+					td 8
+					td 12
+					td
+						a(href='#', title='presente').presente
+		.box.presenca
+			.titulo 
+				| Presenças
+			p
+				label Data
+				input(type="date")
+			p
+				label Horário
+				input(type="text")
+			p
+				label Excedentes
+				input(type="text")
+			table
+				tr
+					th Alunos
+					th Senha
+					th Ação
+				tr
+					td Bernard Faria
+					td 001
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 002
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 003
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 004
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 005
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 006
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 007
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 008
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 009
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+				tr
+					td Bernard Faria
+					td 010
+					td
+						a(href='#', title='Excluir').excluir
+						a(href='#', title='Editar').editar
+			.botoes
+				button.salvar Salvar
+				button Cancelar

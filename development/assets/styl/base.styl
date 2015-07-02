@@ -125,7 +125,7 @@ select
 	background-color #edeef2
 	display block
 	left 130px
-	min-height 1098px
+	min-height 1193px
 	position absolute
 	right 0
 	text-align center
@@ -270,6 +270,16 @@ table
 				&.finalizado:after
 					color #FF5B03
 					content '\e606'
+				&.despesa
+					background-color #FF736A
+					border-radius 50%
+					height 12px
+					width 12px
+				&.receita
+					background-color #00BC91
+					border-radius 50%
+					height 12px
+					width 12px
 			a
 				display inline-block
 				height 20px
@@ -284,6 +294,8 @@ table
 					content '\e60c'
 				&.excluir:after
 					content '\e601'
+				&.presente:after
+					content '\e611'
 			small
 				display block
 				font-family TitilliumWeb-Light
@@ -345,6 +357,7 @@ form
 #cad_aula_exp
 #cad_estacionamento
 #cad_servico
+#financeiro
 	.titulo
 		border-bottom 10px solid #353535
 		margin-bottom 10px
