@@ -116,8 +116,10 @@ select
 				&.m7:after
 					content '\e617'
 				&.m8:after
-					content '\e609'
+					content '\e60f'
 				&.m9:after
+					content '\e609'
+				&.m10:after
 					content '\e610'
 
 // CONTAINER
@@ -301,6 +303,35 @@ table
 				font-family TitilliumWeb-Light
 				font-size 12px
 				margin -5px 0 0
+
+// TABS
+.tab
+	ul.tabs
+		border-bottom 1px solid #ddd
+		display block
+		margin 0 auto 15px
+		padding-bottom 15px
+		text-align center
+		width 770px
+		li
+			display inline-block
+			font-size 14px
+			height 42px
+			margin-left 1px
+			width 165px
+			a
+				background-color #dcdcdc
+				color #BABABA
+				display block
+				height 42px
+				line-height 42px
+				// text-align center
+				width 165px
+			&.active
+			&:active
+				a
+					background-color #353535
+					color #ddd
 					
 // FORMULARIO
 form
@@ -358,9 +389,29 @@ form
 #cad_estacionamento
 #cad_servico
 #financeiro
+#configuracao
 	.titulo
 		border-bottom 10px solid #353535
 		margin-bottom 10px
+		
+// POPUP
+// .fundo
+// 	background-color rgba(0,0,0,.7)
+// 	height 100%
+// 	left 0
+// 	position absolute
+// 	top 0
+// 	width 100%
+// 	z-index 9999
+// 	.popupContainer
+// 		background-color #fff
+// 		height 484px
+// 		left 50%
+// 		position absolute
+// 		top 50%
+// 		transform translate(-50%,-50%)
+// 		width 442px
+		
 		
 		
 
