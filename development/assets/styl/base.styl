@@ -298,12 +298,21 @@ table
 					content '\e601'
 				&.presente:after
 					content '\e611'
+				&.info
+					margin 0 0 0 10px
+					top 2px
+					&:after
+						content '\e620'
+				&.user:after
+					content '\e61f'
 			small
 				display block
 				font-family TitilliumWeb-Light
 				font-size 12px
 				margin -5px 0 0
-
+		&.ativo td
+			background-color #E7E8EC
+			
 // TABS
 .tab
 	ul.tabs

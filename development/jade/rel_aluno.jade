@@ -1,0 +1,174 @@
+#rel_aluno
+	h1 
+		| Relatório de Aluno
+		.user
+		.sair
+	.content
+		.box
+			.titulo.t1 Pesquisar aluno
+			.tab
+				ul.tabs
+					li.active
+						a(href="#") Aluno
+					li
+						a(href="#") Aluno / Idade
+					li
+						a(href="#") Aluno / Bairro
+				.tab-content
+					#aluno
+						form
+							p.aluno
+								label Aluno
+								select
+									option Bernard Faria
+									option João Machado
+									option Victor Vieira
+							p
+								label Data Inicial
+								input(type="date")
+							p
+								label Data Final
+								input(type="date")
+							.botoes
+								button.salvar Pesquisar
+								button Cancelar
+						.titulo Resultados
+						table
+							tr
+								th Aluno
+								th Plano
+								th Início Contrato
+								th Fim Contrato
+								th Num. Presenças
+							tr
+								td Bernard Faria
+								td 4x Semestral
+								td 01/01/2015
+								td 31/06/2015
+								td 34
+						table
+							tr
+								th Data
+								th Horário
+							tr
+								td 04/01/2015
+								td 19:00
+							tr
+								td 04/01/2015
+								td 19:00
+							tr
+								td 04/01/2015
+								td 19:00
+							tr
+								td 04/01/2015
+								td 19:00
+							tr
+								td 04/01/2015
+								td 19:00
+					#aluno_idade
+						form
+							p
+								label Data Inicial
+								input(type="date")
+							p
+								label Data Final
+								input(type="date")
+							.botoes
+								button.salvar Pesquisar
+								button Cancelar
+						table
+							tr
+								th Aluno
+								th Data Nasc.
+								th Plano
+								th Valor
+								th Desconto
+								th Ação
+							tr
+								td Bernard Faria
+								td 29/03/1988
+								td 4x Semestral
+								td 481
+								td 50%
+								td
+									a.user(href='#', title='Excluir')
+							tr
+								td Bernard Faria
+								td 29/03/1988
+								td 4x Semestral
+								td 481
+								td 50%
+								td
+									a.user(href='#', title='Excluir')
+							tr
+								td Bernard Faria
+								td 29/03/1988
+								td 4x Semestral
+								td 481
+								td 50%
+								td
+									a.user(href='#', title='Excluir')
+							tr
+								td Bernard Faria
+								td 29/03/1988
+								td 4x Semestral
+								td 481
+								td 50%
+								td
+									a.user(href='#', title='Excluir')
+							tr
+								td Bernard Faria
+								td 29/03/1988
+								td 4x Semestral
+								td 481
+								td 50%
+								td
+									a.user(href='#', title='Excluir')
+							
+					#aluno_bairro
+						.titulo Alunos ativos e trancados por bairro
+						table
+							tr
+								th Número de alunos
+								th Bairro
+								th Percentual
+							tr
+								td 240
+								td Lourdes
+								td 50%
+							tr.ativo
+								td 240
+								td Lourdes
+								td 50%
+							tr
+								td 240
+								td Lourdes
+								td 50%
+							tr
+								td 240
+								td Lourdes
+								td 50%
+						table
+							tr
+								th Aluno
+								th Ação
+							tr
+								td Bernard Faria
+								td
+									a(href='#', title='Editar').editar
+							tr
+								td Bernard Faria
+								td
+									a(href='#', title='Editar').editar
+							tr
+								td Bernard Faria
+								td
+									a(href='#', title='Editar').editar
+							tr
+								td Bernard Faria
+								td
+									a(href='#', title='Editar').editar
+							tr
+								td Bernard Faria
+								td
+									a(href='#', title='Editar').editar
